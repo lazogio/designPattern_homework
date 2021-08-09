@@ -1,6 +1,4 @@
 package StepObjects;
-
-import DataObjects.models.ClientData;
 import DataObjects.models.ClientData;
 import PageObjects.WebElements;
 import org.testng.Assert;

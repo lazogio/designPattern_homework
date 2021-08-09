@@ -1,9 +1,7 @@
 package PageObjects;
 
 import DataObjects.models.ClientData;
-import DataObjects.models.ClientData;
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -11,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class WebElements {
     ClientData clientData = new ClientData();
     public SelenideElement
-            Form = $(byXpath("/html/body/div[2]/div/div/div[2]/div/div[2]/div/div[2]")),
+            Form = $(byXpath("//div[@class='category-cards']/div[2]")),
             PracticeForm = $(byXpath("//span[text()='Practice Form']")),
             firstName=$("#firstName"),
             lastName=$("#lastName"),
