@@ -30,7 +30,6 @@ public class FillForm {
         checkinfo.clickSubmit();
         checkinfo.CheckSubmit();
         checkinfo.CheckStudentInfo();
-
     }
     @AfterMethod
     public void closer(){closeWindow();}
