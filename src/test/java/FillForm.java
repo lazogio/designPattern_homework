@@ -1,13 +1,9 @@
 import DataObjects.models.ClientData;
-import StepObjects.Checkinfo;
-import StepObjects.ConfigSteps;
-import StepObjects.FormStep;
+import StepObjects.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import static com.codeborne.selenide.Selenide.closeWindow;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class FillForm {
     @BeforeTest
@@ -20,13 +16,17 @@ public class FillForm {
     public void UserRegistration(){
         ClientData clientData =new ClientData();
         FormStep formStep = new FormStep();
-        Checkinfo checkinfo= new Checkinfo();
+        PracticeFormStep practiceFormStep =new PracticeFormStep();
+        FillPageStep fillPageStep=new FillPageStep();
         formStep.ClickForm();
-        formStep.ClickPracticeForm();
-        formStep.firstName(clientData.firstName);
-        formStep.lastName(clientData.lastName);
-        formStep.gender(clientData.gender);
-        formStep.phone(clientData.Phone);
+        practiceFormStep.ClickPracticeForm();
+        Checkinfo checkinfo= new Checkinfo();
+
+        fillPageStep.firstName(clientData.firstName);
+        fillPageStep.lastName(clientData.lastName);
+        fillPageStep.gender(clientData.gender);
+        fillPageStep.phone(clientData.Phone);
+
         checkinfo.clickSubmit();
         checkinfo.CheckSubmit();
         checkinfo.CheckStudentInfo();

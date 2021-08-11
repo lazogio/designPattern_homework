@@ -1,20 +1,21 @@
 package StepObjects;
 import DataObjects.models.ClientData;
-import PageObjects.WebElements;
+import PageObjects.FillFormPage;
+import PageObjects.PopUpPage;
 import org.testng.Assert;
 public class Checkinfo {
-    WebElements webElements =new WebElements();
+    PopUpPage popUpPage =new PopUpPage();
     ClientData clientData =new ClientData();
-
+    FillFormPage fillFormPage= new FillFormPage();
     public void clickSubmit(){
-        webElements.submit.scrollTo().click();
+        fillFormPage.submit.scrollTo().click();
     }
     public void CheckSubmit(){
-        Assert.assertEquals(webElements.submittingtheform.getText(),"Thanks for submitting the form");
+        Assert.assertEquals(popUpPage.submittingtheform.getText(),"Thanks for submitting the form");
     }
     public void CheckStudentInfo(){
-        Assert.assertEquals(webElements.checkStudentName.getText(),"Giorgi Lazareshvili","Validate the Student Name");
-        Assert.assertEquals(webElements.checkgender.getText(), clientData.gender,"Validate the Student Gender");
-        Assert.assertEquals(webElements.checkphone.getText(), clientData.Phone,"Validate the Student phone");
+        Assert.assertEquals(popUpPage.checkStudentName.getText(),"Giorgi Lazareshvili","Not Validate the Student Name");
+        Assert.assertEquals(popUpPage.checkgender.getText(), clientData.gender,"Not Validate the Student Gender");
+        Assert.assertEquals(popUpPage.checkphone.getText(), clientData.Phone,"Not Validate the Student phone");
     }
 }
