@@ -1,8 +1,17 @@
 package StepObjects;
+import PageObjects.PageFactoryAndFluent.FormPage;
+import org.openqa.selenium.WebDriver;
 
-import PageObjects.FormPage;
-
-public class FormStep {
-    FormPage formPage =new FormPage();
-    public void ClickForm(){formPage.btnForm.click();}
+public class FormStep extends ConfigSteps{
+//    FormPage formPage =new FormPage();
+//    public void ClickForm(){formPage.btnForm.click();}
+    FormPage formPage;
+    public FormStep(WebDriver driver){
+        super(driver);
+        formPage = new FormPage(driver);
+    }
+    public FormStep ClickbtnForm() {
+        formPage.FromBtn.click();
+        return  this;
+    }
 }
