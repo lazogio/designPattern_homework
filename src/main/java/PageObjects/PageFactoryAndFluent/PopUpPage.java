@@ -15,7 +15,7 @@ public class PopUpPage {
     public WebElement SubmittingtheForm;
     @FindBy(xpath="//td[contains(text(), 'Student Name')]/following-sibling::td")
     public WebElement checkStudentName;
-    @FindBy(id="//td[contains(text(), 'Gender')]/following-sibling::td")
+    @FindBy(xpath="//td[contains(text(), 'Gender')]/following-sibling::td")
     public WebElement CheckGender;
     @FindBy(xpath="//td[contains(text(), 'Mobile')]/following-sibling::td")
     public WebElement CheckPhone;

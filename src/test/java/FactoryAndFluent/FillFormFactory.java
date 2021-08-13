@@ -11,7 +11,8 @@ public class FillFormFactory extends SetUp {
                 .setFirstName()
                 .setLastName()
                 .setGender()
-                .setPhone();
+                .setPhone()
+                .setSubmitbtn();
         checkinfo
                 .CheckSubmit()
                 .CheckStudentInfo();
