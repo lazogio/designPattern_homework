@@ -1,8 +1,7 @@
 package StepObjects;
 import DataObjects.models.ClientData;
-import PageObjects.FillFormPage;
 import PageObjects.PageFactoryAndFluent.PopUpPage;
-import org.checkerframework.checker.units.qual.C;
+import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 public class Checkinfo extends ConfigSteps {
@@ -28,11 +27,17 @@ public  Checkinfo(WebDriver driver){
     super((driver));
     popUpPage=new PageObjects.PageFactoryAndFluent.PopUpPage(driver);
 }
+    @Feature("Submitting Text")
+    @Story("Check Submiting Text")
+    @Description("Check Submiting Text")
     public  Checkinfo CheckSubmit(){
         Assert.assertEquals(popUpPage.SubmittingtheForm.getText(),"Thanks for submitting the form");
         return this;
     }
     ClientData clientData= new ClientData();
+    @Epic("Stundent Infromation")
+    @Story("Check StudentInfo")
+    @Description("Check StudentInfo")
     public  Checkinfo CheckStudentInfo(){
                 Assert.assertEquals(popUpPage.checkStudentName.getText()
                 ,"Giorgi Lazareshvili","Not Validate the Student Name");

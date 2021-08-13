@@ -2,6 +2,7 @@ package StepObjects;
 
 import DataObjects.models.ClientData;
 import PageObjects.PageFactoryAndFluent.FillFormPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,31 +25,38 @@ public class FillPageStep extends ConfigSteps {
         fillFormPage = new FillFormPage(driver);
     }
     ClientData clientData = new ClientData();
-    public FillPageStep setFirstName(){
+    @Step("Set firstName")
+    public FillPageStep setFullName(String firstName,String lastName){
        fillFormPage.firstName.sendKeys(clientData.firstName);
+       fillFormPage.lastName.sendKeys(clientData.lastName);
         return this;
     }
+    @Step("Set LastName")
     public FillPageStep setLastName(){
-        fillFormPage.lastName.sendKeys(clientData.lastName);
+
         return this;
     }
+    @Step("Select  Gender")
     public  FillPageStep setGender(){
-        switch (clientData.gender) {
-            case "Male" -> fillFormPage.Male.click();
-            case "Female" -> fillFormPage.Female.click();
-            case "Other" -> fillFormPage.Other.click();
+        if (clientData.gender=="Male"){
+            fillFormPage.Male.click();
+        }else if(clientData.gender=="Female"){
+            fillFormPage.Female.click();
+        }else if (clientData.gender=="Other"){
+            fillFormPage.Other.click();
         }
         return  this;
     }
+    @Step("SetPhone")
     public FillPageStep setPhone(){
         fillFormPage.phone.sendKeys(clientData.Phone);
         return this;
     }
+    @Step("Click SubmitBtn")
     public FillPageStep setSubmitbtn(){
-        WebElement submitbnt1 = fillFormPage.submitbtn;
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", submitbnt1);
-        submitbnt1.click();
+        js.executeScript("arguments[0].scrollIntoView();", fillFormPage.submitbtn);
+        js.executeScript("arguments[0].click();", fillFormPage.submitbtn);
         return this;
     }
 }

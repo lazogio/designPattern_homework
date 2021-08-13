@@ -10,7 +10,8 @@ public class PracticeForm {
     WebDriver driver;
     @FindBy(xpath ="//span[text()='Practice Form']")
     public WebElement SubmittingtheForm;
-
-    public PracticeForm(WebDriver driver){PageFactory.initElements(driver, this);}
-
+    public PracticeForm(WebDriver driver){
+        this.driver=driver;
+        PageFactory.initElements(driver, this);
+    }
 }
