@@ -25,7 +25,7 @@ public class FillPageStep extends ConfigSteps {
         fillFormPage = new FillFormPage(driver);
     }
     ClientData clientData = new ClientData();
-    @Step("Set FullName")
+    @Step("Set FullName : {0}, {1}}")
     public FillPageStep setFullName(String firstName,String lastName){
        fillFormPage.firstName.sendKeys(clientData.firstName);
        fillFormPage.lastName.sendKeys(clientData.lastName);
