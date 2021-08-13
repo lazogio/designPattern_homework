@@ -11,6 +11,7 @@ public class FormPage {
     @FindBy(xpath= "//div[@class='category-cards']/div[2]")
    public WebElement FromBtn;
     public FormPage(WebDriver driver){
+        this.driver=driver;
         driver.get("https://demoqa.com/");
         PageFactory.initElements(driver, this);
     }

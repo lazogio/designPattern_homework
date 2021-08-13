@@ -1,4 +1,5 @@
 package FactoryAndFluent;
+import DataObjects.models.ClientData;
 import StepObjects.Checkinfo;
 import StepObjects.FillPageStep;
 import StepObjects.FormStep;
@@ -16,6 +17,7 @@ public class SetUp {
     FillPageStep fillPageStep;
     Checkinfo checkinfo;
     WebDriver driver;
+    ClientData clientData =new ClientData();
     public SetUp(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
