@@ -41,7 +41,6 @@
             <artifactId>htmlunit-driver</artifactId>
             <version>2.50.0</version>
         </dependency>
-
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
