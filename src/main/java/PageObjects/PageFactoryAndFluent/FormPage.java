@@ -8,23 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class FormPage {
     WebDriver driver;
-//    @FindBy(xpath= "//div[@class='category-cards']/div[2]")
-//    WebElement FromBtn;
-//    public FormPage(WebDriver driver){
-//        driver.get("https://demoqa.com/");
-//        PageFactory.initElements(driver, this);
-//    }
-//    public void clickForm(){FromBtn.click();}
-
-//        ----------Fluent Ap-----------
+    @FindBy(xpath= "//div[@class='category-cards']/div[2]")
+   public WebElement FromBtn;
     public FormPage(WebDriver driver){
         driver.get("https://demoqa.com/");
-        this.driver=driver;
+        PageFactory.initElements(driver, this);
     }
-    By submitbtn= By.xpath("//div[@class='category-cards']/div[2]");
-
-    public FormPage clickForm(){
-        driver.findElement(submitbtn).click();
-        return this;
-    }
+ //   public void clickForm(){FromBtn.click();}
 }
