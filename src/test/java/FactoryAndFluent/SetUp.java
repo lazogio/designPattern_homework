@@ -7,7 +7,10 @@ import StepObjects.PracticeFormStep;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,8 +19,8 @@ public class SetUp {
     PracticeFormStep practiceFormStep;
     FillPageStep fillPageStep;
     Checkinfo checkinfo;
-    WebDriver driver;
     ClientData clientData =new ClientData();
+    static WebDriver driver;
     public SetUp(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
@@ -28,7 +31,10 @@ public class SetUp {
         fillPageStep=new FillPageStep(driver);
         checkinfo=new Checkinfo(driver);
     }
-    @AfterMethod
+    public static WebDriver getDriver() {
+        return driver;
+    }
+    @AfterClass
     public void closer(){
         driver.close();
     }

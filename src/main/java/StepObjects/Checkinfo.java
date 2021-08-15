@@ -23,15 +23,16 @@ public class Checkinfo extends ConfigSteps {
 //                ,"Not Validate the Student phone");
 //    }
     PopUpPage popUpPage;
-public  Checkinfo(WebDriver driver){
+public  Checkinfo(WebDriver driver) {
     super((driver));
     popUpPage=new PageObjects.PageFactoryAndFluent.PopUpPage(driver);
 }
     @Feature("Submitting Text")
     @Story("Check Submiting Text")
     @Description("Check Submiting Text")
+
     public  Checkinfo CheckSubmit(){
-        Assert.assertEquals(popUpPage.SubmittingtheForm.getText(),"Thanks for submitting the form");
+        Assert.assertNotEquals(popUpPage.SubmittingtheForm.getText(),"Thanks for submitting the form");
         return this;
     }
     ClientData clientData= new ClientData();
@@ -43,6 +44,8 @@ public  Checkinfo(WebDriver driver){
                 ,"Giorgi Lazareshvili","Not Validate the Student Name");
         Assert.assertEquals(popUpPage.CheckGender.getText()
                 , clientData.gender,"Not Validate the Student Gender");
+
+        //invoke Error
         Assert.assertEquals(popUpPage.CheckPhone.getText(), clientData.Phone
                 ,"Not Validate the Student phone");
         return this;
