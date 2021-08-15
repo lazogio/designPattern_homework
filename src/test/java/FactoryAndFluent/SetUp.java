@@ -7,20 +7,17 @@ import StepObjects.PracticeFormStep;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestListener;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-
 import java.util.concurrent.TimeUnit;
 
-public class SetUp {
+public class SetUp implements ITestListener {
     FormStep formStep;
     PracticeFormStep practiceFormStep;
     FillPageStep fillPageStep;
     Checkinfo checkinfo;
     ClientData clientData =new ClientData();
-    static WebDriver driver;
+ private static WebDriver driver;
     public SetUp(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();

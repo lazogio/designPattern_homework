@@ -7,6 +7,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 public class Config extends SetUp implements ITestListener {
+    @Override
     public void onTestFailure(ITestResult result) {
         takeScreenshot(SetUp.getDriver());
         saveLogs(result.getMethod().getConstructorOrMethod().getName());
