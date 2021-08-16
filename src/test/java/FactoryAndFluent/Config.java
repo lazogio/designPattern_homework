@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class Config extends SetUp implements ITestListener {
+public class Config  implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         takeScreenshot(SetUp.getDriver());
@@ -20,4 +20,5 @@ public class Config extends SetUp implements ITestListener {
     public static String saveLogs(String message) {
         return message;
     }
+
 }

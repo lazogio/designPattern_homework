@@ -1,6 +1,5 @@
 package FactoryAndFluent;
 import io.qameta.allure.*;
-import org.openqa.selenium.WebDriver;
 import org.testng.SkipException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
