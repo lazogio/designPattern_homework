@@ -4,7 +4,6 @@
 *.log
 *.mdmp
 target/
-allure-results/
 build/
 *.ipr
 *.iml
